@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function copyText()
+{
+    var num=document.getElementById("search_text").value;
+    var urlname = "http://127.0.0.1:8000/film/search/"+num;
+    window.location.href=urlname;
+}
+</script>
+
+
+<meta http-equiv="Content-Type" charset='utf-8'>
+<style type = "text/css">
+.nav {
+    background: #232323;
+    height: 60px;
+    display: inline-block;
+}
+.nav li {
+    float: left;
+    list-style-type: none;
+    position: relative;
+}
+.nav li a {
+    font-size: 16px;
+    color: white;
+    display: block;
+    line-height: 60px;
+    padding: 0 26px;
+    text-decoration: none;
+    border-left: 1px solid #2e2e2e;
+    font-family: Montserrat, sans-serif;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.nav li a:hover {
+    background-color: #2e2e2e;
+}
+#settings a {
+    padding: 18px;
+    height: 24px;
+    font-size: 10px;
+    line-height: 24px;
+}
+#search {
+    width: 357px;
+    margin: 4px;
+}
+#search_text{
+    width: 297px;
+    padding: 15px 0 15px 20px;
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+    border: 0 none;
+    height: 52px;
+    margin-right: 0;
+    color: white;
+    outline: none;
+    background: #1f7f5c;
+    float: left;
+    box-sizing: border-box;
+    transition: all 0.15s;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: white;
+}
+#search_text:focus {
+    background: rgb(64, 151, 119);
+}
+#search_button {
+    border: 0 none;
+    background: #1f7f5c url(search.png) center no-repeat;
+    width: 60px;
+    float: left;
+    padding: 0;
+    text-align: center;
+    height: 52px;
+    cursor: pointer;
+}
+#options a{
+    border-left: 0 none;
+}
+#options>a {
+    background-image: url(triangle.png);
+    background-position: 85% center;
+    background-repeat: no-repeat;
+    padding-right: 42px;
+}
+.subnav {
+    visibility: hidden;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    transition: all 0.1s;
+    background: #232323;
+}
+.subnav li {
+    float: none;
+}
+.subnav li a {
+    border-bottom: 1px solid #2e2e2e;
+}
+#options:hover .subnav {
+    visibility: visible;
+    top: 100%;
+    opacity: 1;
+}
+.txtCenter{
+	text-align:center;
+}
+
+
+
+</style>
+
+<body style="background-image:url('http://img2.imgtn.bdimg.com/it/u=1694537514,3482815026&fm=200&gp=0.jpg');background-size: cover;">
+<div align= center>
+<h1>Welcome to MTbaby's Website!</h1>
+<h2>在这里开启你的电影之旅吧~~</h2>
+<ul class="nav">
+	<li id="search">
+		<form class = "txtCenter"  method="post">
+			<div id="some">
+			<input  type="text" name="search_text" id="search_text"  maxlength="100" placeholder="Search" autocomplete="off"/>
+			<input type="button" name="search_button" id="search_button" >
+			</div>
+		</form>
+
+	</li>
+	<li id="options">
+
+        <a onclick="copyText()">MT搜</a>
+	</li>
+
+</ul>
+</div>
+<script src="prefixfree-1.0.7.js" type="text/javascript"></script>
+</body>
+</head>
+</html>

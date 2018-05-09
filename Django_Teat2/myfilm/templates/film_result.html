@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>films information</title>
+</head>
+<body style="background-image:url('http://img2.imgtn.bdimg.com/it/u=3531468457,2935874477&fm=26&gp=0.jpg');background-size: cover;">
+<button><a href="http://127.0.0.1:8000/film/search/0">返回首页</button></a>
+<form action="" method="post">
+
+    {% csrf_token %}
+    {% if film %}
+        <h2 style="color: red"> 搜索结果:</h2>
+        <table width='100%' border="1px" cellspacing="1px" bordercolor="#6699ff">
+        <caption><h3>电影信息</h3></caption>
+            <tr>
+                <th>电影名</th>
+                <td>{{ film.name }}</td>
+            </tr>
+            <tr>
+                <th>下载链接</th>
+                <td><a href="{{ film.url }}" title = "点击进行下载"/>下载地址</td>
+            </tr>
+            <tr>
+                <th>导演</th>
+                <td>{{ film.director }}</td>
+            </tr>
+            <tr>
+                <th width="50px">编剧</th>
+                <td>{{ film.edit }}</td>
+            </tr>
+            <tr>
+                <th width="110px">主演</th>
+                <td>{{ film.star }}</td>
+            </tr>
+            <tr>
+                <th width="50px">类型</th>
+                <td>{{ film.type }}</td>
+            </tr>
+            <tr>
+                <th width="50px">地区</th>
+                <td>{{ film.region }}</td>
+            </tr>
+            <tr>
+                <th width="50px">语言</th>
+                <td>{{ film.language }}</td>
+            </tr>
+            <tr>
+                <th width="10dpx">上映日期</th>
+                <td>{{ film.date }}</td>
+            </tr>
+            <tr>
+                <th width="50px">片长</th>
+                <td>{{ film.length }}</td>
+            </tr>
+            <tr>
+                <th>又名</th>
+                <td>{{ film.othername }}</td>
+            </tr>
+            <tr>
+                <th>IMDB链接</th>
+                <td>{{ film.IMDblink }}</td>
+            </tr>
+            <tr>
+                <th nowrap>简介</th>
+                <td>{{ film.brief }}</td>
+            </tr>
+            <tr>
+                <th>豆瓣评分</th>
+                <td>{{ film.douban }}</td>
+            </tr>
+            <tr>
+                <th>IMDB评分</th>
+                <td>{{ film.IMDB }}</td>
+            </tr>
+            <tr>
+                <th nowrap>摘要</th>
+                <td>{{ film.summery }}</td>
+            </tr>
+            <tr>
+                <th>海报</th>
+                <td><img src="{{ film.postlink }}" title="海报详情"/></td>
+            </tr>
+
+    </table>
+
+    {% endif %}
+
+</form>
+</body>
+</html>
